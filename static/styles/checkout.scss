@@ -1,0 +1,22 @@
+.order {
+  padding-top: 4.75rem;
+  h3, p {
+    font-size: 2rem;
+  }
+
+  .product {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0.25rem;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-bottom: 1px solid #CCC;
+
+    .button {
+      align-items: center;
+    }
+  }
+  .button-field {
+    padding: 1rem 1rem 3rem;
+  }
+}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+<div class="body columns">
+    <div class="dashboard column is-3 category">
+        <p><a href="#" class="active">Home</a></p>
+        <p><a href="/product">Product</a></p>
+        <p><a href="/discount">Discount</a></p>
+    </div>
+    <div class="dashboard column is-9 menu-product">
+
+        <div class="columns product">
+
+            <h1 class="title is-1 has-text-centered">Welcome !!{{customer}}</h1>
+
+        </div>
+
+    </div>
+    <div class="modal" id="modal_cart">
+        <div class="modal-background modal-switch"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Cart</p>
+                <button class="delete modal-switch" aria-label="close">
+                </button>
+            </header>
+            <section class="modal-card-body modal-body">
+                <div>There is nothing in your order!</div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-link" onclick="checkOut(this)">Check Out</button>
+                <button class="button" onclick="modal_switch.classList.remove('is-active')">Keep Shopping</button>
+            </footer>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{{url_for('static', filename='scripts/cookie.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='scripts/main.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/bulma.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/menu.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/modal.css')}}">
+</head>
+<body>
+<div class="nav-bar">
+    <input class="input is-rounded" type="checkbox" id="menu_check">
+    <label class="label-toggle" for="menu_check">
+        <span class="label-bar"></span>
+        <span class="label-bar"></span>
+        <span class="label-bar"></span>
+    </label>
+    <p class="header">
+        <span class="name">Nameless</span>
+        <span id="page">home</span>
+        <span class="hint">type "pikachu" to summon one! :D</span>
+    </p>
+    <div class="link-list">
+        <div class="links">
+            {% if customer %}
+                <span class="link modal-switch">Cart</span>
+            {% endif %}
+            {% if not customer %}
+                <a class="link" href="/login">LogIn</a>
+            {% else %}
+                <a class="link customer" href="#">{{customer}}</a>
+            {% endif %}
+            {% if not customer %}
+                <a class="link" href="/signup">Register</a>
+            {% endif %}
+        </div>
+        <label class="blank-area" for="menu_check"></label>
+    </div>
+</div>
+{% block content %}
+
+{% endblock %}
+</body>
+<script type="text/javascript" src="{{url_for('static', filename='scripts/menu.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='scripts/pikachu.js')}}"></script>
+</html>

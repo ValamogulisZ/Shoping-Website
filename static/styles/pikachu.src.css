@@ -1,0 +1,138 @@
+/* source: https://github.com/generalyi0057/css-pikachu */
+body {
+  margin: 0;
+}
+/* pikachu css */
+.pikachu {
+  /* display: flex; */
+  /* align-items: center; */
+  padding-top: 3rem;
+  padding-bottom: 10rem;
+  background-color: #FED926;
+  text-align: center;
+  /* height: 100%; */
+}
+
+.pikachu .face {
+  flex: 1 1 auto;
+  position: relative;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.pikachu .face .eyes {
+  display: flex;
+  justify-content: center;
+}
+
+.pikachu .face .eyes .eye {
+  position: relative;
+  width: 15%;
+}
+
+.pikachu .face .eyes .eye .eyeball {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #222;
+}
+
+.pikachu .face .eyes .eye.left {
+  margin-right: 26%;
+}
+
+.pikachu .face .eyes .eye.left .eyeball {
+  color: inherit;
+}
+
+.pikachu .face .eyes .eye.right {
+  margin-left: 26%;
+}
+
+.pikachu .face .eyes .eye::before {
+  position: absolute;
+  content: '';
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.pikachu .face .eyes .eye::before {
+  top: 14%;
+}
+
+.pikachu .face .eyes .eye.left::before {
+  right: 18%;
+}
+
+.pikachu .face .eyes .eye.right::before {
+  left: 20%;
+}
+
+.pikachu .face .nose {
+  position: relative;
+  margin: -2.5% auto 0;
+  width: 5%;
+}
+
+.pikachu .face .nose .nose-tip {
+  border-radius: 80%;
+  width: 100%;
+  padding-top: 50%;
+  background: #222;
+}
+
+.pikachu .face .cheeks {
+  display: flex;
+  justify-content: center;
+  margin-top: 6%;
+}
+
+.pikachu .face .cheeks .cheek {
+  position: relative;
+  width: 16%;
+}
+
+.pikachu .face .cheeks .cheek .electrode {
+  position: absolute;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #F71F39;
+}
+
+.pikachu .face .cheeks .cheek.left {
+  margin-right: 30%;
+}
+
+.pikachu .face .cheeks .cheek.right {
+  margin-left: 30%;
+}
+
+.pikachu .face .mouth {
+  text-align: center;
+  background-color: transparent;
+  margin-top: -48px;
+}
+
+.pikachu .face .mouth::before,
+.pikachu .face .mouth::after {
+  display: inline-block;
+  content: '';
+  width: 9%;
+  height: 36px;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  border-bottom-color: #222;
+}
+
+.pikachu .face .mouth::before {
+  margin-right: -1%;
+  transform: rotate(-23deg);
+}
+
+.pikachu .face .mouth::after {
+  margin-left: -1%;
+  transform: rotate(23deg);
+}

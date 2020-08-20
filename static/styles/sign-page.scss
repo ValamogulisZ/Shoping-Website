@@ -1,0 +1,48 @@
+body {
+  background-color: #FED926;
+  padding-bottom: 5rem;
+  min-height: 100vh;
+
+  .input-form {
+    position: relative;
+    margin: 0 auto;
+    padding: 1.5rem 4rem 2.5rem;
+    width: 32rem;
+    background-color: white;
+    border: 1px solid #CCC;
+    border-radius: 25px;
+    -webkit-box-shadow: 3px 5px 12px 0 rgba(171,171,171,1);
+    -moz-box-shadow: 3px 5px 12px 0 rgba(171,171,171,1);
+    box-shadow: 3px 5px 12px 0 rgba(171,171,171,1);
+
+    &:after,
+    &:before {
+      position: absolute;
+      margin-top: 3rem;
+      content: '';
+      width: 9rem;
+      height: 5rem;
+      background-color: #FED926;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    &:before {
+      left: -4.5rem;
+      transform: rotate(330deg);
+    }
+
+    &:after {
+      background-color: #FED926;
+      right: -5rem;
+      top: 5rem;
+      transform: rotate(10deg);
+    }
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  body .input-form {
+    width: 100%;
+  }
+}

@@ -1,0 +1,144 @@
+/*
+ * css-modal by generalyi0057
+ * https://github.com/generalyi0057/css-modal
+ */
+
+/* modal entry and exit animation */
+
+#modalA:checked+.modal-cart {
+  visibility: visible;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+#modalA:not(:checked)+.modal-cart .modal-window {
+  margin-top: 200%;
+  /*animation:fade-out .3s;*/
+  /*opacity: 0;*/
+}
+
+#modalA:checked+.modal-cart .modal-window {
+  margin-top: 5%;
+  /*animation:fade-in .3s;*/
+  /*opacity: 1;*/
+}
+
+/*@keyframes fade-in{0%{opacity:0}100%{opacity:1}}*/
+
+/*@keyframes fade-out{0%{opacity:1}100%{opacity:0}}*/
+
+/* modal button */
+label.modal-switch {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  /* padding: 3px 5px; */
+  /* color: #FFF; */
+  /* background-color: #2AB6FB; */
+  /* border: 3px solid #2EBAFF; */
+  /* border-radius: 7px; */
+}
+
+input.modal-switch {
+  display: none;
+}
+
+.modal-cart {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  z-index: 2;
+}
+
+/* modal background */
+.modal-cart .modal-cart-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+
+/* modal window */
+.modal-cart .modal-window {
+  position: absolute;
+  margin: 10% 12.5%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 75vw;
+  max-height: 75vh;
+  border-radius: 7px;
+  background-color: #FFF;
+  z-index: 3;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  overflow: auto;
+}
+
+/* modal content in window */
+.modal-cart .modal-window .modal-header,
+.modal-cart .modal-window .modal-body,
+.modal-cart .modal-window .modal-footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.modal-cart .modal-window .modal-header {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #DDD;
+  text-align: center;
+}
+
+.modal-cart .modal-window .modal-body {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.modal-cart .modal-window .modal-footer {
+  padding-top: 12px;
+  border-top: 1px solid #DDD;
+}
+
+/* close cross */
+/* .modal-cart .modal-window .modal-close {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  float: right;
+  margin-top: -20px;
+  padding: 8px;
+} */
+
+/* cross sign */
+/* .modal-cart .modal-window .modal-close:before,
+.modal-cart .modal-window .modal-close:after {
+  position: absolute;
+  content: " ";
+  background-color: #333;
+  height: 16px;
+  width: 3px;
+  margin-left: -1px;
+  margin-top: -8px;
+} */
+
+/* .modal-cart .modal-window .modal-close:before {
+  transform: rotate(45deg);
+}
+
+.modal-cart .modal-window .modal-close:after {
+  transform: rotate(-45deg);
+} */

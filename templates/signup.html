@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/bulma.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/pikachu.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/sign-page.css')}}">
+</head>
+<body>
+<div class="pikachu">
+    <div class="face">
+        <div class="eyes">
+            <div class="eye left">
+                <div class="eyeball"></div>
+            </div>
+            <div class="eye right">
+                <div class="eyeball"></div>
+            </div>
+        </div>
+        <div class="nose">
+            <div class="nose-tip"></div>
+        </div>
+        <div class="cheeks">
+            <div class="cheek left">
+                <div class="electrode"></div>
+            </div>
+            <div class="cheek right">
+                <div class="electrode"></div>
+            </div>
+        </div>
+        <div class="mouth"></div>
+    </div>
+</div>
+<div class="input-form">
+    <p class="title has-text-centered">Sign Up</p>
+    <form method="post">
+        <div class="field">
+            <p class="control">
+                {{ signup_form.hidden_tag() }}
+                {{ signup_form.signup_username(class="input is-medium",placeholder="Username") }}
+                <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+                {{ signup_form.signup_password(class="input is-medium", placeholder="Password") }}
+                <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+                {{ signup_form.first_name(class="input is-medium", placeholder="First Name") }}
+                <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+                {{ signup_form.last_name(class="input is-medium",placeholder="Last Name") }}
+                <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+                {{ signup_form.email(class="input is-medium", placeholder="Email") }}
+                <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+                {{ signup_form.address1(class="input is-medium", placeholder="Address Line 1") }}
+                <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+                {{ signup_form.address2(class="input is-medium", placeholder="Address Line 2") }}
+                <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                </span>
+            </p>
+        </div>
+        {{ signup_form.submit_signup(class="input button is-link is-medium") }}
+        {{session['report']}}
+    </form>
+</div>
+</body>
+<script type="text/javascript" src="{{url_for('static', filename='scripts/pikachu.js')}}"></script>
+</html>

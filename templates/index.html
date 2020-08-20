@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+<div class="body columns">
+    <div class="dashboard column is-3 category">
+        <p><a href="/" >Home</a></p>
+        <p><a href="/product" class="active">Product</a></p>
+        <p><a href="/discount">Discount</a></p>
+    </div>
+    <div class="dashboard column is-9 menu-product">
+        {% for i in range(num) %}
+        <div class="columns product">
+            <div class="column is-3 img">
+                <img src="{{url[i]}}" alt="Temporary no pictures">
+            </div>
+            <div class="column is-6 info">
+                <p class="name title is-5">{{name[i]}}</p>
+                <p class="sub-title"><span>tag:</span><span class="prod-tag">{{tag[i]}}</span></p>
+                <p class="sub-title"><span>inventory:</span><span class="prod-inv">{{inventory[i]}}</span></p>
+            </div>
+            <div class="column buy">
+                <p class="price">
+                    <span>Unit price: $</span>
+                    <span class="dollar">{{price[i]}}</span>
+                </p>
+                <input class="input is-rounded" type="number" id="f{{id[i]}}" value="1">
+                <button class="button is-primary" type="button" onclick="addToCart({{id[i]}})">Add To Cart</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="modal" id="modal_cart">
+        <div class="modal-background modal-switch"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Cart</p>
+                <button class="delete modal-switch" aria-label="close">
+                </button>
+            </header>
+            <section class="modal-card-body modal-body">
+                <div>There is nothing in your order!</div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-link" onclick="checkOut(this)">Check Out</button>
+                <button class="button" onclick="modal_switch.classList.remove('is-active')">Keep Shopping</button>
+            </footer>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{{url_for('static', filename='scripts/cookie.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='scripts/main.js')}}"></script>
+{% endblock %}
